@@ -1,2 +1,2 @@
-# dead_on_sight
+# Dead On Sight
 Unity game where you die on sight.
