@@ -39,7 +39,7 @@
                 },
                 {
                     "name": "Possess",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "13296c31-54ed-4932-8ded-4a181ef0440f",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -226,7 +226,7 @@
                 {
                     "name": "",
                     "id": "5070b849-e8cf-4fa0-bec8-c5d686badafa",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

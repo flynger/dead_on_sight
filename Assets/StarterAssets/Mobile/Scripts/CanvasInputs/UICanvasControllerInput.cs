@@ -27,7 +27,12 @@ namespace StarterAssets
         {
             starterAssetsInputs.SprintInput(virtualSprintState);
         }
-        
+
+        public void VirtualPossessInput(bool virtualPossessState)
+        {
+            starterAssetsInputs.PossessInput(virtualPossessState);
+        }
+
     }
 
 }

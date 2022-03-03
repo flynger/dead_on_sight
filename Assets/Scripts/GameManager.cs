@@ -16,4 +16,10 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void SelectNewPlayer(GameObject obj)
+    {
+        player = obj;
+        obj.GetComponent<Entity>();
+    }
 }
