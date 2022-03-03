@@ -3,12 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - CinemachineTarget
-  - player
-  - enemy
-  - item
-  - interactable
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -16,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
-  - Ground
+  - 
+  - 
   - 
   - 
   - 
@@ -45,16 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: player
-    uniqueID: 961505841
-    locked: 0
-  - name: enemy
-    uniqueID: 2604623065
-    locked: 0
-  - name: item
-    uniqueID: 3938566305
-    locked: 0
-  - name: interactable
-    uniqueID: 1591842665
     locked: 0
