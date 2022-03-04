@@ -21,6 +21,11 @@ namespace StarterAssets
             get;
         }
 
+        public bool isHackable
+        {
+            get;
+        }
+
         void Start()
         {
 
@@ -41,11 +46,17 @@ namespace StarterAssets
             hitPoints -= damage;
         }
 
+        public void ToggleInput(bool state)
+        {
+            controller._rawInput.enabled = state;
+        }
+
         IEnumerator HackCooldown()
         {
             canHack = false;
             yield return new WaitForSeconds(5f);
             canHack = true;
+            gameManager.SelectNewPlayer(gameObject);
         }
 
         void Hack(GameObject obj)
