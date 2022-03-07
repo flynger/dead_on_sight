@@ -153,7 +153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 2014446609}
   controller: {fileID: 71630774}
-  canHack: 1
+  hitPoints: 7
+  baseDamage: 2
+  isHackable: 1
+  canUseHack: 1
   target: {fileID: 476020483}
 --- !u!1 &405881246 stripped
 GameObject:
@@ -206,7 +209,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 2014446609}
   controller: {fileID: 476020487}
-  canHack: 0
+  hitPoints: 7
+  baseDamage: 2
+  isHackable: 1
+  canUseHack: 0
   target: {fileID: 71630773}
 --- !u!1 &542508511
 GameObject:

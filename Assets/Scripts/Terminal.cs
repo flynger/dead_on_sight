@@ -4,18 +4,17 @@ using UnityEngine;
 
 namespace StarterAssets
 {
-    public class Terminal : MonoBehaviour, Entity
+    public class Terminal : Entity
     {
-        public GameManager gameManager;
-        public ThirdPersonController controller;
-        public bool canHack = true;
+        public bool canUseHack = true;
         public GameObject target;
-
+/*
         public int hitPoints
         {
             get;
             set;
         }
+
         public int baseDamage
         {
             get;
@@ -24,44 +23,52 @@ namespace StarterAssets
         public bool isHackable
         {
             get;
-        }
+        }*/
 
         void Start()
         {
-
+            
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (canHack && controller._input.possess)
+            HackCheck();
+        }
+        
+        public void HackCheck()
+        {
+            if (canUseHack && controller._input.possess)
             {
-                Hack(target);
+                RaycastHit hit;
+                ToggleCollider(false);
+                if (Physics.Raycast(transform.position + new Vector3(0, 0.8f, 0), Vector3.forward, out hit))
+                {
+                    Debug.Log(hit.collider.gameObject);
+                    if (hit.collider.gameObject.GetComponent<Entity>())
+                        Hack(hit.collider.gameObject);
+                }
+                ToggleCollider(true);
                 StartCoroutine(HackCooldown());
             }
         }
 
-        public void ApplyDamage(int damage)
-        {
-            hitPoints -= damage;
-        }
-
-        public void ToggleInput(bool state)
-        {
-            controller._rawInput.enabled = state;
-        }
-
         IEnumerator HackCooldown()
         {
-            canHack = false;
+            canUseHack = false;
             yield return new WaitForSeconds(5f);
-            canHack = true;
+            canUseHack = true;
             gameManager.SelectNewPlayer(gameObject);
         }
 
         void Hack(GameObject obj)
         {
             gameManager.SelectNewPlayer(obj);
+        }
+
+        void ToggleCollider(bool state)
+        {
+            gameObject.GetComponent<Collider>().enabled = state;
         }
     }
 }
