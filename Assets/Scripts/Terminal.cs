@@ -35,21 +35,25 @@ namespace StarterAssets
         {
             HackCheck();
         }
-        
+
         public void HackCheck()
         {
+            Debug.DrawRay(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward) * 16, Color.green);
             if (canUseHack && controller._input.possess)
             {
                 RaycastHit hit;
-                ToggleCollider(false);
-                if (Physics.Raycast(transform.position + new Vector3(0, 0.8f, 0), Vector3.forward, out hit))
+                //ToggleCollider(false);
+                if (Physics.Raycast(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, gameManager.entityLayer))
                 {
                     Debug.Log(hit.collider.gameObject);
-                    if (hit.collider.gameObject.GetComponent<Entity>())
-                        Hack(hit.collider.gameObject);
+                    Hack(hit.collider.gameObject);
+                    StartCoroutine(HackCooldown());
                 }
-                ToggleCollider(true);
-                StartCoroutine(HackCooldown());
+                else
+                {
+                    //Debug.Log("hack fail");
+                }
+                //ToggleCollider(true);
             }
         }
 
