@@ -2,13 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Entity 
+namespace StarterAssets
 {
-    public int hitPoints { get; set; }
-    public int baseDamage { get; }
-    public bool isHackable { get; }
+    public class Entity : MonoBehaviour
+    {
+        public GameManager gameManager;
+        public ThirdPersonController controller;
+        public int hitPoints = 7;
+        public int baseDamage = 2;
+        public bool isHackable = true;
 
-    void ApplyDamage(int damage);
+        public void ApplyDamage(int damage)
+        {
+            hitPoints -= damage;
+        }
 
-    void ToggleInput(bool state);
+        public void ToggleInput(bool state)
+        {
+            controller._rawInput.enabled = state;
+        }
+    }
 }
