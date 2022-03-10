@@ -84,8 +84,9 @@ namespace StarterAssets
 
 		private Animator _animator;
 		private CharacterController _controller;
-		private StarterAssetsInputs _input;
+		public StarterAssetsInputs _input; // input script
 		private GameObject _mainCamera;
+		public PlayerInput _rawInput;
 
 		private const float _threshold = 0.01f;
 
@@ -105,6 +106,7 @@ namespace StarterAssets
 			_hasAnimator = TryGetComponent(out _animator);
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
+			_rawInput = GetComponent<PlayerInput>();
 
 			AssignAnimationIDs();
 
