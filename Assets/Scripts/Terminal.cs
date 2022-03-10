@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace StarterAssets
 {
+<<<<<<< HEAD
     public class Terminal : MonoBehaviour, Entity
     {
         public GameManager gameManager;
@@ -11,11 +12,22 @@ namespace StarterAssets
         public bool canHack = true;
         public GameObject target;
 
+=======
+    public class Terminal : Entity
+    {
+        public bool canUseHack = true;
+        public GameObject target;
+/*
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
         public int hitPoints
         {
             get;
             set;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
         public int baseDamage
         {
             get;
@@ -24,16 +36,25 @@ namespace StarterAssets
         public bool isHackable
         {
             get;
+<<<<<<< HEAD
         }
 
         void Start()
         {
 
+=======
+        }*/
+
+        void Start()
+        {
+            
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
         }
 
         // Update is called once per frame
         void Update()
         {
+<<<<<<< HEAD
             if (canHack && controller._input.possess)
             {
                 Hack(target);
@@ -56,6 +77,37 @@ namespace StarterAssets
             canHack = false;
             yield return new WaitForSeconds(5f);
             canHack = true;
+=======
+            HackCheck();
+        }
+
+        public void HackCheck()
+        {
+            Debug.DrawRay(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward) * 16, Color.green);
+            if (canUseHack && controller._input.possess)
+            {
+                RaycastHit hit;
+                //ToggleCollider(false);
+                if (Physics.Raycast(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, gameManager.entityLayer))
+                {
+                    Debug.Log(hit.collider.gameObject);
+                    Hack(hit.collider.gameObject);
+                    StartCoroutine(HackCooldown());
+                }
+                else
+                {
+                    //Debug.Log("hack fail");
+                }
+                //ToggleCollider(true);
+            }
+        }
+
+        IEnumerator HackCooldown()
+        {
+            canUseHack = false;
+            yield return new WaitForSeconds(5f);
+            canUseHack = true;
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
             gameManager.SelectNewPlayer(gameObject);
         }
 
@@ -63,5 +115,13 @@ namespace StarterAssets
         {
             gameManager.SelectNewPlayer(obj);
         }
+<<<<<<< HEAD
+=======
+
+        void ToggleCollider(bool state)
+        {
+            gameObject.GetComponent<Collider>().enabled = state;
+        }
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
     }
 }
