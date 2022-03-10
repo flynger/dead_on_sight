@@ -126,11 +126,14 @@ NavMeshSettings:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &2572429
 GameObject:
 =======
 =======
 >>>>>>> refs/remotes/origin/main
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 =======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 --- !u!1 &71630773 stripped
@@ -153,15 +156,19 @@ MonoBehaviour:
 MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/main
 =======
 >>>>>>> refs/remotes/origin/main
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 =======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -194,6 +201,8 @@ Transform:
 >>>>>>> refs/remotes/origin/main
 =======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
   m_GameObject: {fileID: 71630773}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -203,6 +212,7 @@ Transform:
   gameManager: {fileID: 2014446609}
   controller: {fileID: 71630774}
 <<<<<<< HEAD
+<<<<<<< HEAD
   canHack: 1
   target: {fileID: 476020483}
 <<<<<<< HEAD
@@ -210,11 +220,16 @@ Transform:
 =======
 >>>>>>> refs/remotes/origin/main
 =======
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
   hitPoints: 7
   baseDamage: 2
   isHackable: 1
   canUseHack: 1
   target: {fileID: 476020483}
+<<<<<<< HEAD
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
+=======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 --- !u!1 &405881246 stripped
 GameObject:
@@ -268,12 +283,18 @@ MonoBehaviour:
   gameManager: {fileID: 2014446609}
   controller: {fileID: 476020487}
 <<<<<<< HEAD
+<<<<<<< HEAD
   canHack: 0
 =======
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
   hitPoints: 7
   baseDamage: 2
   isHackable: 1
   canUseHack: 0
+<<<<<<< HEAD
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
+=======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
   target: {fileID: 71630773}
 --- !u!1 &542508511
@@ -969,6 +990,7 @@ PrefabInstance:
     - {fileID: 2070925442191277752, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1576209173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
@@ -1005,6 +1027,8 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 --- !u!1 &1505446803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2070925442191277755, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
@@ -1032,6 +1056,9 @@ MonoBehaviour:
     m_Bits: 0
   IgnoreTag: 
   CameraRadius: 0.2
+<<<<<<< HEAD
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
+=======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 --- !u!1001 &1762682258
 PrefabInstance:
@@ -1222,6 +1249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
       propertyPath: GroundLayers.m_Bits
       value: 641
       objectReference: {fileID: 0}
@@ -1258,6 +1286,9 @@ PrefabInstance:
 =======
       propertyPath: LockCameraPosition
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
+=======
+      propertyPath: LockCameraPosition
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5885216827943657505, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
@@ -1272,6 +1303,7 @@ PrefabInstance:
       propertyPath: pushLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     - target: {fileID: 5930158855145388821, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Layer
@@ -1402,10 +1434,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
 =======
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
     - target: {fileID: 6982812146204527121, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+<<<<<<< HEAD
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
+=======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
@@ -1417,6 +1454,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1576209173}
 =======
   m_GameObject: {fileID: 71630773}
@@ -1424,6 +1462,9 @@ MonoBehaviour:
 =======
   m_GameObject: {fileID: 71630773}
 >>>>>>> refs/remotes/origin/main
+=======
+  m_GameObject: {fileID: 71630773}
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 =======
   m_GameObject: {fileID: 71630773}
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
@@ -1721,7 +1762,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: LockCameraPosition
@@ -1873,6 +1917,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 8338988566280778634, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -1944,6 +1989,46 @@ MonoBehaviour:
 >>>>>>> refs/remotes/origin/main
 =======
 >>>>>>> refs/remotes/origin/main
+=======
+    - target: {fileID: 8345528668818648182, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832014917856829317, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916421316635241550, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979680374780180007, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014238855272647367, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029242941628065318, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090225697883493277, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098726045431565069, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136568059596826656, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 =======
     - target: {fileID: 8345528668818648182, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Layer

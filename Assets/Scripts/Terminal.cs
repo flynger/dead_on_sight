@@ -5,6 +5,7 @@ using UnityEngine;
 namespace StarterAssets
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     public class Terminal : MonoBehaviour, Entity
     {
         public GameManager gameManager;
@@ -13,11 +14,16 @@ namespace StarterAssets
         public GameObject target;
 
 =======
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
     public class Terminal : Entity
     {
         public bool canUseHack = true;
         public GameObject target;
 /*
+<<<<<<< HEAD
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
+=======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
         public int hitPoints
         {
@@ -25,6 +31,10 @@ namespace StarterAssets
             set;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 =======
 
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
@@ -37,23 +47,30 @@ namespace StarterAssets
         {
             get;
 <<<<<<< HEAD
+<<<<<<< HEAD
         }
 
         void Start()
         {
 
 =======
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
         }*/
 
         void Start()
         {
             
+<<<<<<< HEAD
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
+=======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
         }
 
         // Update is called once per frame
         void Update()
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             if (canHack && controller._input.possess)
             {
@@ -78,6 +95,8 @@ namespace StarterAssets
             yield return new WaitForSeconds(5f);
             canHack = true;
 =======
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
             HackCheck();
         }
 
@@ -107,6 +126,9 @@ namespace StarterAssets
             canUseHack = false;
             yield return new WaitForSeconds(5f);
             canUseHack = true;
+<<<<<<< HEAD
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
+=======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
             gameManager.SelectNewPlayer(gameObject);
         }
@@ -116,12 +138,18 @@ namespace StarterAssets
             gameManager.SelectNewPlayer(obj);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 
         void ToggleCollider(bool state)
         {
             gameObject.GetComponent<Collider>().enabled = state;
         }
+<<<<<<< HEAD
+>>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
+=======
 >>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
     }
 }
