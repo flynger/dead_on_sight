@@ -124,9 +124,12 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &2572429
 GameObject:
 =======
+=======
+>>>>>>> refs/remotes/origin/main
 --- !u!1 &71630773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
@@ -145,11 +148,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &71630780
 MonoBehaviour:
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/main
+=======
 >>>>>>> refs/remotes/origin/main
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   serializedVersion: 6
   m_Component:
@@ -176,6 +183,8 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
+=======
+>>>>>>> refs/remotes/origin/main
   m_GameObject: {fileID: 71630773}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -186,6 +195,9 @@ Transform:
   controller: {fileID: 71630774}
   canHack: 1
   target: {fileID: 476020483}
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/main
+=======
 >>>>>>> refs/remotes/origin/main
 --- !u!1 &405881246 stripped
 GameObject:
@@ -1333,7 +1345,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1576209173}
+=======
+  m_GameObject: {fileID: 71630773}
+>>>>>>> refs/remotes/origin/main
 =======
   m_GameObject: {fileID: 71630773}
 >>>>>>> refs/remotes/origin/main
@@ -1530,6 +1546,7 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1937283124 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
@@ -1589,6 +1606,8 @@ MonoBehaviour:
   sightRange: 20
   sightAngle: 68
   inSightRange: 0
+=======
+>>>>>>> refs/remotes/origin/main
 =======
 >>>>>>> refs/remotes/origin/main
 --- !u!1001 &1979352518
