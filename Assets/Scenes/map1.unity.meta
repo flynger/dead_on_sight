@@ -1,15 +1,11 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD:Assets/ToolboxAsset/ToolBox.unitypackage.meta
-guid: 1a5b2970404151642b52c9d58f0b4f2b
-=======
+<<<<<<<< HEAD:Assets/Scenes/map1.unity.meta
 guid: c330b32d3b747a842bcbe87480daf1d8
->>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96:Assets/Scenes/map1.unity.meta
-=======
-guid: c330b32d3b747a842bcbe87480daf1d8
->>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
 DefaultImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+========
+guid: 3478da61bf1794a41be0c6d39c6242fb
+>>>>>>>> main:Assets/ToolboxAsset/ToolBox.unitypackage.meta

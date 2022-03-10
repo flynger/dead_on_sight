@@ -10,26 +10,10 @@ namespace StarterAssets
 {
     public class GameManager : MonoBehaviour
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        GameObject player;
-        // Start is called before the first frame update
-        void Start()
-        {
-            player = GameObject.Find("Player");
-        }
-
-=======
         public GameObject player;
         public CinemachineVirtualCamera virtualCam;
         public LayerMask entityLayer;
 
-=======
-        public GameObject player;
-        public CinemachineVirtualCamera virtualCam;
-        public LayerMask entityLayer;
-
->>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
         // Start is called before the first frame update
         void Start()
         {
@@ -37,10 +21,6 @@ namespace StarterAssets
             virtualCam = GameObject.Find("PlayerFollowCamera").GetComponent<CinemachineVirtualCamera>();
         }
 
-<<<<<<< HEAD
->>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
-=======
->>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
         // Update is called once per frame
         void Update()
         {
@@ -57,14 +37,7 @@ namespace StarterAssets
                 Debug.Log("possessed another Terminal!");
             }
             player.GetComponent<Entity>().ToggleInput(true);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             virtualCam.Follow = player.transform.Find("PlayerCameraRoot");
->>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
-=======
-            virtualCam.Follow = player.transform.Find("PlayerCameraRoot");
->>>>>>> 84c7dc6204f864f695c3913deb2aa5fd1a804c96
         }
     }
 }
