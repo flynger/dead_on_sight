@@ -115,6 +115,12 @@ namespace StarterAssets
 			_fallTimeoutDelta = FallTimeout;
 		}
 
+		public PlayerInput GetRawInput()
+		{
+			_rawInput = GetComponent<PlayerInput>();
+			return _rawInput;
+		}
+
 		private void Update()
 		{
 			_hasAnimator = TryGetComponent(out _animator);

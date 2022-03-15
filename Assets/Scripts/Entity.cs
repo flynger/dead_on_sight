@@ -11,6 +11,7 @@ namespace StarterAssets
         public int hitPoints = 7;
         public int baseDamage = 2;
         public bool isHackable = true;
+        public bool hasAI = true;
 
         public void ApplyDamage(int damage)
         {
@@ -19,7 +20,19 @@ namespace StarterAssets
 
         public void ToggleInput(bool state)
         {
-            controller._rawInput.enabled = state;
+            GetComponent<ThirdPersonController>().enabled = state;
+            //GetComponent<StarterAssetsInputs>().enabled = state;
+            // controller.Assign();
+            controller.GetRawInput().enabled = state;
+        }
+
+        public void ToggleAI(bool state)
+        {
+            if (hasAI)
+            {
+                GetComponent<AIScript>().enabled = state;
+                GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = state;
+            }
         }
     }
 }
