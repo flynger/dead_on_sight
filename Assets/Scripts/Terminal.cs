@@ -38,22 +38,28 @@ namespace StarterAssets
 
         public void HackCheck()
         {
-            Debug.DrawRay(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward) * 16, Color.green);
-            if (canUseHack && controller._input.possess)
+            // Debug.DrawRay(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward) * 16, Color.green);
+            // if (canUseHack && controller._input.possess)
+            // {
+            //     RaycastHit hit;
+            //     //ToggleCollider(false);
+            //     if (Physics.Raycast(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, gameManager.entityLayer))
+            //     {
+            //         Debug.Log(hit.collider.gameObject);
+            //         Hack(hit.collider.gameObject);
+            //         StartCoroutine(HackCooldown());
+            //     }
+            //     else
+            //     {
+            //         //Debug.Log("hack fail");
+            //     }
+            //     //ToggleCollider(true);
+            // }
+            GameObject obj;
+            if (canUseHack && controller._input.possess && CheckVision(16, out obj))
             {
-                RaycastHit hit;
-                //ToggleCollider(false);
-                if (Physics.Raycast(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, gameManager.entityLayer))
-                {
-                    Debug.Log(hit.collider.gameObject);
-                    Hack(hit.collider.gameObject);
-                    StartCoroutine(HackCooldown());
-                }
-                else
-                {
-                    //Debug.Log("hack fail");
-                }
-                //ToggleCollider(true);
+                Hack(obj);
+                StartCoroutine(HackCooldown());
             }
         }
 
