@@ -14,13 +14,16 @@ public class AIScript: MonoBehaviour
     public int walkPointIndex;
     public bool walkPointSet;
     public float walkPointRange;
-    public bool canPatrol;
+    public bool canPatrol = true;
 
     //states
     public float sightRange;
     [Range(0,360)]
     public float sightAngle;
     public bool inSightRange;
+
+    //AI script
+
 
     private void Start()
     {
@@ -80,7 +83,12 @@ public class AIScript: MonoBehaviour
             }
             else { inSightRange = false; }
         }
-        else if (inSightRange) { inSightRange = false; }
+        else if (inSightRange) 
+        {
+            LostPlayer();
+            inSightRange = false;
+            canPatrol = true;
+        }
     }
     private void Patrol()
     {
@@ -104,7 +112,7 @@ public class AIScript: MonoBehaviour
     
     private void DiscoverPlayer()
     {
-        
+        BeginPlayerKill();
         canPatrol = false;
         agent.SetDestination(transform.position);
     }
@@ -121,7 +129,15 @@ public class AIScript: MonoBehaviour
         
     }
 
-    
+    public virtual void BeginPlayerKill() //overridden to make custom Player targetting/Killing method
+    {
+
+    }
+
+    public virtual void LostPlayer() // overridden to be a method for situation the player is nolonger detected
+    {
+
+    }
 
     
 }

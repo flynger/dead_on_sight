@@ -2731,6 +2731,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 476020491, guid: 70ff3a8a3dea9824183a30736b7ea257, type: 3}
+      propertyPath: baseDamage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 476020491, guid: 70ff3a8a3dea9824183a30736b7ea257, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 529712915}
@@ -2788,7 +2792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2236432817309976062, guid: 70ff3a8a3dea9824183a30736b7ea257, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: seeker
       objectReference: {fileID: 0}
     - target: {fileID: 2236432817309976062, guid: 70ff3a8a3dea9824183a30736b7ea257, type: 3}
       propertyPath: m_IsActive
@@ -2798,7 +2802,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 476020485, guid: 70ff3a8a3dea9824183a30736b7ea257, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70ff3a8a3dea9824183a30736b7ea257, type: 3}
 --- !u!43 &383902887
 Mesh:
@@ -14935,6 +14940,49 @@ Transform:
   m_Father: {fileID: 887809299}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1680483218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2236432817309976062, guid: 70ff3a8a3dea9824183a30736b7ea257, type: 3}
+  m_PrefabInstance: {fileID: 381238318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1680483219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680483218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee602a0ae257f824688e51f3910611f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1680483221}
+  playerRef: {fileID: 1807458059}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  walkPointArray:
+  - {fileID: 426173782}
+  - {fileID: 950361401}
+  - {fileID: 90553198}
+  - {fileID: 726896821}
+  walkPointIndex: 0
+  walkPointSet: 0
+  walkPointRange: 0
+  canPatrol: 1
+  sightRange: 75
+  sightAngle: 46
+  inSightRange: 0
+  killTime: 1
+--- !u!195 &1680483221 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 476020484, guid: 70ff3a8a3dea9824183a30736b7ea257, type: 3}
+  m_PrefabInstance: {fileID: 381238318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1733692381
 PrefabInstance:
   m_ObjectHideFlags: 0
