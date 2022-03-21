@@ -56,7 +56,7 @@ namespace StarterAssets
             //     //ToggleCollider(true);
             // }
             GameObject obj;
-            if (canUseHack && controller._input.possess && CheckVision(16, out obj))
+            if (canUseHack && controller._input.possess && CheckVision(16, out obj) && obj != null && obj.CompareTag("enemy"))
             {
                 Hack(obj);
                 StartCoroutine(HackCooldown());

@@ -37,15 +37,15 @@ namespace StarterAssets
             }
         }
 
-        public GameObject CheckVision(float distance, out GameObject obj)
+        public bool CheckVision(float distance, out GameObject obj)
         {
             // account for starting point based on entity
             Debug.DrawRay(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward) * distance, Color.green);
             RaycastHit hit;
-            Physics.Raycast(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity);
-            if (hit) obj = hit.collider.gameObject;
+            bool result = Physics.Raycast(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity);
+            if (result) obj = hit.collider.gameObject;
             else obj = null;
-            return obj;
+            return result;
         }
     }
 }
