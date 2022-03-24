@@ -1,7 +1,9 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(AIScript))]
+namespace StarterAssets
+{
+[CustomEditor(typeof(AIScript)), CanEditMultipleObjects]
 public class FieldOfVIewGizmos : Editor
 {
     private void OnSceneGUI()
@@ -31,3 +33,5 @@ public class FieldOfVIewGizmos : Editor
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 }
+}
+

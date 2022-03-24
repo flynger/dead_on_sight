@@ -3,26 +3,61 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace StarterAssets {
+namespace StarterAssets 
+{
     public class SeekerAI : AIScript
     {
         public float killTime;
-        
+        public bool alreadyStartedKP;
+        private IEnumerator killCoroutine;
 
+        
         public override void BeginPlayerKill()
         {
-            StartCoroutine(KillPlayer());
+
+            if (!alreadyStartedKP)
+            {
+                agent.SetDestination(transform.position);
+                killCoroutine = KillPlayer();
+                StartCoroutine(killCoroutine);
+                alreadyStartedKP = true;
+            }
+            
         }
 
         public override void LostPlayer()
         {
-            StopCoroutine(KillPlayer());
+            if (alreadyStartedKP)
+            {
+                agent.speed = 6;
+                agent.angularSpeed = 120;
+                StopCoroutine(killCoroutine);
+                alreadyStartedKP = false;
+            }
+            
         }
 
         IEnumerator KillPlayer()
         {
-            yield return new WaitForSeconds(killTime);
-            playerRef.GetComponent<Entity>().ApplyDamage(GetComponent<Entity>().baseDamage);
+            agent.speed = .1f;
+            agent.angularSpeed = 1000f;
+            WaitForSeconds wait = new WaitForSeconds(.2f);
+            float i = 0;
+            while (i < killTime - 1)
+            {
+                yield return wait;
+                i += .2f;
+                agent.SetDestination(playerRef.transform.position);
+            }
+
+            while (i < killTime)
+            {
+                i += .2f;
+                agent.SetDestination(playerRef.transform.position);
+                playerRef.GetComponent<Entity>().ApplyDamage(GetComponent<Entity>().baseDamage);
+            }
+
+
         }
     }
 
