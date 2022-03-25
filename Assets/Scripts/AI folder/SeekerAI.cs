@@ -10,8 +10,15 @@ namespace StarterAssets
         public float killTime;
         public bool alreadyStartedKP;
         private IEnumerator killCoroutine;
-
+        private float moveSpeed;
+        private float turnSpeed;
         
+        void Awake()
+        {
+            
+            moveSpeed = agent.speed;
+            turnSpeed = agent.angularSpeed;
+        }
         public override void BeginPlayerKill()
         {
 
@@ -29,8 +36,8 @@ namespace StarterAssets
         {
             if (alreadyStartedKP)
             {
-                agent.speed = 6;
-                agent.angularSpeed = 120;
+                agent.speed = moveSpeed;
+                agent.angularSpeed = turnSpeed;
                 StopCoroutine(killCoroutine);
                 alreadyStartedKP = false;
             }
@@ -39,11 +46,11 @@ namespace StarterAssets
 
         IEnumerator KillPlayer()
         {
-            agent.speed = .1f;
-            agent.angularSpeed = 1000f;
+            agent.speed = .5f;
+            agent.angularSpeed = 2000f;
             WaitForSeconds wait = new WaitForSeconds(.2f);
             float i = 0;
-            while (i < killTime - 1)
+            while (i < killTime - 2f)
             {
                 yield return wait;
                 i += .2f;
@@ -52,6 +59,7 @@ namespace StarterAssets
 
             while (i < killTime)
             {
+                yield return wait;
                 i += .2f;
                 agent.SetDestination(playerRef.transform.position);
                 playerRef.GetComponent<Entity>().ApplyDamage(GetComponent<Entity>().baseDamage);

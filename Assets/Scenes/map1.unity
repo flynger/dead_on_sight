@@ -2740,7 +2740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 476020491, guid: 70ff3a8a3dea9824183a30736b7ea257, type: 3}
       propertyPath: baseDamage
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 476020491, guid: 70ff3a8a3dea9824183a30736b7ea257, type: 3}
       propertyPath: gameManager
@@ -14983,9 +14983,9 @@ MonoBehaviour:
   walkPointRange: 0
   canPatrol: 1
   sightRange: 75
-  sightAngle: 58
+  sightAngle: 120
   inSightRange: 0
-  killTime: 3
+  killTime: 4
   alreadyStartedKP: 0
 --- !u!195 &1680483221 stripped
 NavMeshAgent:
@@ -16430,7 +16430,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.27295625, b: 0.24056602, a: 1}
+  m_Color: {r: 1, g: 0.30747986, b: 0.23921567, a: 1}
   m_Intensity: 5
   m_Range: 75
   m_SpotAngle: 33.5
