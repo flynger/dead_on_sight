@@ -8,29 +8,15 @@ namespace StarterAssets
     {
         public bool canUseHack = true;
         public GameObject target;
-/*
-        public int hitPoints
-        {
-            get;
-            set;
-        }
-
-        public int baseDamage
-        {
-            get;
-        }
-
-        public bool isHackable
-        {
-            get;
-        }*/
+        public Inventory inventory;
+        public GameObject pickupRange;
+        public GameObject[] itemsWithinRange;
 
         void Start()
         {
-            
+
         }
 
-        // Update is called once per frame
         void Update()
         {
             HackCheck();
@@ -38,23 +24,20 @@ namespace StarterAssets
 
         public void HackCheck()
         {
-            Debug.DrawRay(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward) * 16, Color.green);
-            if (canUseHack && controller._input.possess)
+            if (CheckVision(16, out target) && target != null)
             {
-                RaycastHit hit;
-                //ToggleCollider(false);
-                if (Physics.Raycast(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, gameManager.entityLayer))
+                if (target.CompareTag("enemy") && controller._input.possess && canUseHack)
                 {
-                    Debug.Log(hit.collider.gameObject);
-                    Hack(hit.collider.gameObject);
+                    Hack(target);
                     StartCoroutine(HackCooldown());
                 }
-                else
-                {
-                    //Debug.Log("hack fail");
-                }
-                //ToggleCollider(true);
+                // else if (target.CompareTag("item") && controller._input.interact)
+                // {
+                //     inventory.DropItem();
+                //     inventory.item = target;
+                // }
             }
+            else target = null;
         }
 
         IEnumerator HackCooldown()

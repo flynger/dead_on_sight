@@ -13,6 +13,7 @@ namespace StarterAssets
         public bool jump;
         public bool sprint;
         public bool possess;
+        public bool action;
 
         [Header("Movement Settings")]
         public bool analogMovement;
@@ -51,6 +52,11 @@ namespace StarterAssets
         {
             PossessInput(value.isPressed);
         }
+
+        public void OnAction(InputValue value)
+        {
+            ActionInput(value.isPressed);
+        }
 #else
 	// old input sys if we do decide to have it (most likely wont)...
 #endif
@@ -79,6 +85,11 @@ namespace StarterAssets
         public void PossessInput(bool newPossessState)
         {
             possess = newPossessState;
+        }
+
+        public void ActionInput(bool newActionState)
+        {
+            action = newActionState;
         }
 
 #if !UNITY_IOS || !UNITY_ANDROID

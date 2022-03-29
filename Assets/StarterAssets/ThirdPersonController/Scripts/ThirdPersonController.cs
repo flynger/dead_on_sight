@@ -115,6 +115,12 @@ namespace StarterAssets
 			_fallTimeoutDelta = FallTimeout;
 		}
 
+		public PlayerInput GetRawInput()
+		{
+			_rawInput = GetComponent<PlayerInput>();
+			return _rawInput;
+		}
+
 		private void Update()
 		{
 			_hasAnimator = TryGetComponent(out _animator);
@@ -322,6 +328,11 @@ namespace StarterAssets
 			
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+
+		public void HaltAnimations()
+		{
+			_animator.SetFloat(_animIDMotionSpeed, 0);
 		}
 	}
 }

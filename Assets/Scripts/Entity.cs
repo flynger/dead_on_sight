@@ -11,6 +11,7 @@ namespace StarterAssets
         public int hitPoints = 7;
         public int baseDamage = 2;
         public bool isHackable = true;
+        public bool hasAI = true;
 
         public void ApplyDamage(int damage)
         {
@@ -19,7 +20,32 @@ namespace StarterAssets
 
         public void ToggleInput(bool state)
         {
-            controller._rawInput.enabled = state;
+            controller.GetRawInput().enabled = state;
+            if (!state)
+            {
+                controller.HaltAnimations();
+            }
+            controller.enabled = state;
+        }
+
+        public void ToggleAI(bool state)
+        {
+            if (hasAI)
+            {
+                GetComponent<AIScript>().enabled = state;
+                GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = state;
+            }
+        }
+
+        public bool CheckVision(float distance, out GameObject obj)
+        {
+            // account for starting point based on entity
+            Debug.DrawRay(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward) * distance, Color.green);
+            RaycastHit hit;
+            bool result = Physics.Raycast(transform.position + new Vector3(0.06f, 1.6f, 0f), transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity);
+            if (result) obj = hit.collider.gameObject;
+            else obj = null;
+            return result;
         }
     }
 }
