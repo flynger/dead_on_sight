@@ -30,7 +30,6 @@ namespace StarterAssets
         public void SelectNewPlayer(GameObject obj)
         {
             player.GetComponent<Entity>().ToggleInput(false);
-            player.GetComponent<Entity>().ToggleAI(true);
             player = obj;
             Entity entity = player.GetComponent<Entity>();
             if (entity is Terminal)
@@ -38,7 +37,6 @@ namespace StarterAssets
                 Debug.Log("possessed another Terminal!");
             }
             player.GetComponent<Entity>().ToggleInput(true);
-            player.GetComponent<Entity>().ToggleAI(false);
             virtualCam.Follow = player.transform.Find("PlayerCameraRoot");
         }
     }
