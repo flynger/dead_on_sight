@@ -3,125 +3,150 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIScript: MonoBehaviour
+namespace StarterAssets
 {
-    public NavMeshAgent agent;
-    public GameObject playerRef;
-    public LayerMask groundMask, playerMask;
 
-    //patroll
-    public GameObject[] walkPointArray;
-    public int walkPointIndex;
-    public bool walkPointSet;
-    public float walkPointRange;
-    public bool canPatrol;
-
-    //states
-    public float sightRange;
-    [Range(0,360)]
-    public float sightAngle;
-    public bool inSightRange;
-
-    private void Start()
+    public class AIScript : MonoBehaviour
     {
-        playerRef = GameObject.FindGameObjectWithTag("Player");
-        agent = GetComponent<NavMeshAgent>();
-        StartCoroutine(FOVRoutine());
-    }
+        public NavMeshAgent agent;
+        public GameObject playerRef;
+        public LayerMask groundMask, playerMask;
 
-    private void Update()
-    {
-                
-        if (inSightRange)
+        //patroll
+        public GameObject[] walkPointArray;
+        public int walkPointIndex;
+        public bool walkPointSet;
+        public float walkPointRange;
+        public bool canPatrol = true;
+
+        //states
+        public float sightRange;
+        [Range(0, 360)]
+        public float sightAngle;
+        public bool inSightRange;
+
+        //AI script
+
+
+        private void Start()
         {
-            DiscoverPlayer();
+            playerRef = GameObject.FindGameObjectWithTag("Player");
+            agent = GetComponent<NavMeshAgent>();
+            StartCoroutine(FOVRoutine());
         }
-        
-        else
+
+        private void Update()
         {
-            Patrol();
+
+            if (inSightRange)
+            {
+                DiscoverPlayer();
+            }
+
+            else
+            {
+                Patrol();
+            }
+
         }
-        
-    }
 
-    private IEnumerator FOVRoutine()
-    {
-        WaitForSeconds wait = new WaitForSeconds(.2f);
-
-        while (true) //bool should be false when player dies
+        private IEnumerator FOVRoutine()
         {
-            yield return wait;
-            FieldOfViewCheck();
+            WaitForSeconds wait = new WaitForSeconds(.2f);
+
+            while (true) //bool should be false when player dies
+            {
+                yield return wait;
+                FieldOfViewCheck();
+            }
         }
-    }
 
-    private void FieldOfViewCheck()
-    {
-        Collider[] rangeCheck = Physics.OverlapSphere(transform.position, sightRange, playerMask);
+        private void FieldOfViewCheck()
+        {
+            Collider[] rangeCheck = Physics.OverlapSphere(transform.position, sightRange, playerMask);
 
-        if (rangeCheck.Length != 0)
+            if (rangeCheck.Length != 0)
+            {
+
+                Transform target = rangeCheck[0].transform;
+                Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+                if (Vector3.Angle(transform.forward, directionToTarget) < sightAngle / 2)
+                {
+
+                    float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+                    if (!Physics.Raycast(transform.position + new Vector3(0, 1.6f, 0), directionToTarget, distanceToTarget, groundMask))
+                    {
+
+                        inSightRange = true;
+
+                    }
+                    else { ReturnToPatrol(); }
+                }
+                else { ReturnToPatrol(); }
+            }
+            else if (inSightRange)
+            {
+                ReturnToPatrol();
+            }
+        }
+        private void Patrol()
+        {
+            if (canPatrol)
+            {
+                if (!walkPointSet) SearchWalkPoint();
+
+                if (walkPointSet) agent.SetDestination(walkPointArray[walkPointIndex].transform.position);
+
+                Vector3 distanceToWalkPoint = transform.position - walkPointArray[walkPointIndex].transform.position;
+
+                if (distanceToWalkPoint.magnitude < 1f)
+                {
+                    walkPointSet = false;
+                }
+            }
+
+        }
+
+        private void ReturnToPatrol()
         {
             
-            Transform target = rangeCheck[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
-
-            if (Vector3.Angle(transform.forward, directionToTarget) < sightAngle / 2)
-            {
-                
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
-                if (!Physics.Raycast(transform.position + new Vector3(0, 1.6f, 0), directionToTarget, distanceToTarget, groundMask))
-                {
-                    
-                    inSightRange = true;
-                    
-                }
-                else { inSightRange = false; }
-            }
-            else { inSightRange = false; }
+            LostPlayer();
+            inSightRange = false;
+            canPatrol = true;
         }
-        else if (inSightRange) { inSightRange = false; }
-    }
-    private void Patrol()
-    {
-        if (canPatrol)
+
+        private void DiscoverPlayer()
         {
-            if (!walkPointSet) SearchWalkPoint();
-
-            if (walkPointSet) agent.SetDestination(walkPointArray[walkPointIndex].transform.position);
-
-            Vector3 distanceToWalkPoint = transform.position - walkPointArray[walkPointIndex].transform.position;
-
-            if (distanceToWalkPoint.magnitude < 1f)
-            {
-                walkPointSet = false;
-            }
+            BeginPlayerKill();
+            canPatrol = false;
+            
+            
         }
-        
-    }
 
-    
-    
-    private void DiscoverPlayer()
-    {
-        
-        canPatrol = false;
-        agent.SetDestination(transform.position);
-    }
-    
-    private void SearchWalkPoint()
-    {
-        walkPointIndex++;
-        if (walkPointIndex >= walkPointArray.Length)
+        private void SearchWalkPoint()
         {
-            walkPointIndex = 0;
+            walkPointIndex++;
+            if (walkPointIndex >= walkPointArray.Length)
+            {
+                walkPointIndex = 0;
+            }
+            walkPointSet = true;
+
+
         }
-        walkPointSet = true;
 
-        
+        public virtual void BeginPlayerKill() //overridden to make custom Player targetting/Killing method
+        {
+
+        }
+
+        public virtual void LostPlayer() // overridden to be a method for situation the player is nolonger detected
+        {
+
+        }
+
+
     }
-
-    
-
-    
 }

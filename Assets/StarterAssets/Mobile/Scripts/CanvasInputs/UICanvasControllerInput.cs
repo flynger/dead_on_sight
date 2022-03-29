@@ -33,11 +33,6 @@ namespace StarterAssets
             starterAssetsInputs.PossessInput(virtualPossessState);
         }
 
-        public void VirtualActionInput(bool virtualActionState)
-        {
-            starterAssetsInputs.ActionInput(virtualActionState);
-        }
-
     }
 
 }
