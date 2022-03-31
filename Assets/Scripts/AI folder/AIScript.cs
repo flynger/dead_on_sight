@@ -30,7 +30,7 @@ namespace StarterAssets
 
         private void Start()
         {
-            playerRef = GameObject.FindGameObjectWithTag("Player");
+            playerRef = GameObject.FindGameObjectWithTag("player");
             agent = GetComponent<NavMeshAgent>();
             StartCoroutine(FOVRoutine());
         }
