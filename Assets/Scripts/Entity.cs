@@ -13,9 +13,10 @@ namespace StarterAssets
         public bool isHackable = true;
         public bool hasAI = true;
 
-        public void ApplyDamage(int damage)
+        public virtual bool ApplyDamage(int damage)
         {
             hitPoints -= damage;
+            return hitPoints <= 0;
         }
 
         public void ToggleInput(bool state)
