@@ -11,6 +11,7 @@ namespace StarterAssets
         public Inventory inventory;
         public GameObject pickupRange;
         public GameObject[] itemsWithinRange;
+        public GameObject halfHPIndicator;
         public GameObject LossScreen;
 
         void Start()
@@ -25,10 +26,14 @@ namespace StarterAssets
 
         public override bool ApplyDamage(int damage)
         {
+            
             if (base.ApplyDamage(damage))
             {
                 LossScreen.SetActive(true);
                 return true;
+            } else if (hitPoints <= 5)
+            {
+                halfHPIndicator.SetActive(true);
             }
             return false;
         }
