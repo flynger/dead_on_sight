@@ -11,6 +11,7 @@ namespace StarterAssets
         public Inventory inventory;
         public GameObject pickupRange;
         public GameObject[] itemsWithinRange;
+        public GameObject LossScreen;
 
         void Start()
         {
@@ -20,6 +21,16 @@ namespace StarterAssets
         void Update()
         {
             HackCheck();
+        }
+
+        public override bool ApplyDamage(int damage)
+        {
+            if (base.ApplyDamage(damage))
+            {
+                LossScreen.SetActive(true);
+                return true;
+            }
+            return false;
         }
 
         public void HackCheck()
