@@ -46,21 +46,21 @@ namespace StarterAssets
 
         IEnumerator KillPlayer()
         {
-            agent.speed = .5f;
+            agent.speed = 1f;
             agent.angularSpeed = 2000f;
-            WaitForSeconds wait = new WaitForSeconds(.2f);
+            WaitForSeconds wait = new WaitForSeconds(.4f);
             float i = 0;
-            while (i < killTime - 2f)
+            while (i < killTime - 4f)
             {
                 yield return wait;
-                i += .2f;
+                i += .4f;
                 agent.SetDestination(playerRef.transform.position);
             }
 
             while (i < killTime)
             {
                 yield return wait;
-                i += .2f;
+                i += .4f;
                 agent.SetDestination(playerRef.transform.position);
                 playerRef.GetComponent<Entity>().ApplyDamage(GetComponent<Entity>().baseDamage);
             }
