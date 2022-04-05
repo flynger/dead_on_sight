@@ -13,6 +13,7 @@ namespace StarterAssets
         public GameObject[] itemsWithinRange;
         public GameObject halfHPIndicator;
         public GameObject LossScreen;
+        public bool fingerOffInteract = true;
 
         void Start()
         {
@@ -21,7 +22,7 @@ namespace StarterAssets
 
         void Update()
         {
-            HackCheck();
+            UpdateTarget();
         }
 
         public override bool ApplyDamage(int damage)
@@ -38,22 +39,45 @@ namespace StarterAssets
             return false;
         }
 
+        public void UpdateTarget()
+        {
+            if (!hasAI)
+            {
+                if (CheckVision(16, out target) && target != null)
+                {
+                    HackCheck();
+                    InteractCheck();
+                }
+            }
+        }
+
         public void HackCheck()
         {
-            if (CheckVision(16, out target) && target != null)
+            if (target.CompareTag("enemy") && controller._input.possess && canUseHack)
             {
-                if (target.CompareTag("enemy") && controller._input.possess && canUseHack)
-                {
-                    Hack(target);
-                    StartCoroutine(HackCooldown());
-                }
-                // else if (target.CompareTag("item") && controller._input.interact)
-                // {
-                //     inventory.DropItem();
-                //     inventory.item = target;
-                // }
+                Hack(target);
+                StartCoroutine(HackCooldown());
             }
-            else target = null;
+        }
+
+        public void InteractCheck()
+        {
+            if (Vector3.Distance(transform.position + new Vector3(0.06f, 1.6f, 0f), target.transform.position) <= 4)
+            {
+                if (controller._input.action)
+                {
+                    if (target.CompareTag("interactable") && fingerOffInteract)
+                    {
+                        target.GetComponent<Activate>().activateEffect();
+                        //StartCoroutine(InteractCooldown());
+                    }
+                    fingerOffInteract = false;
+                }
+                else
+                {
+                    fingerOffInteract = true;
+                }
+            }
         }
 
         IEnumerator HackCooldown()
@@ -63,6 +87,13 @@ namespace StarterAssets
             canUseHack = true;
             gameManager.SelectNewPlayer(gameObject);
         }
+
+        // IEnumerator InteractCooldown()
+        // {
+        //     fingerOffInteract = false;
+        //     yield return new WaitForSeconds(1f);
+        //     fingerOffInteract = true;
+        // }
 
         void Hack(GameObject obj)
         {

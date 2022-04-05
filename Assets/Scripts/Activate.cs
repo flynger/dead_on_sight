@@ -5,7 +5,10 @@ using UnityEngine;
 public class Activate : MonoBehaviour
 {
     public GameObject[] objects;
+    public GameObject cooldownSprite;
+    public float cooldownSec;
     public string effect;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +27,14 @@ public class Activate : MonoBehaviour
                 obj.SetActive(!obj.activeSelf);
             }
         }
+        StartCoroutine(offOnCooldown());
+    }
+
+    IEnumerator offOnCooldown() {
+        cooldownSprite.SetActive(true);
+        GetComponent<MeshRenderer>().enabled = false;
+        yield return new WaitForSeconds(cooldownSec);
+        cooldownSprite.SetActive(false);
+        GetComponent<MeshRenderer>().enabled = true;
     }
 }
