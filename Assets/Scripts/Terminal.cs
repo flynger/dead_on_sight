@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace StarterAssets
 {
@@ -31,6 +32,7 @@ namespace StarterAssets
             if (base.ApplyDamage(damage))
             {
                 LossScreen.SetActive(true);
+                StartCoroutine(RestartGame(5f));
                 return true;
             } else if (hitPoints <= 5)
             {
@@ -87,6 +89,13 @@ namespace StarterAssets
             canUseHack = true;
             gameManager.SelectNewPlayer(gameObject);
         }
+
+        public IEnumerator RestartGame(float time)
+        {
+            yield return new WaitForSeconds(time);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+         
 
         // IEnumerator InteractCooldown()
         // {
