@@ -5,6 +5,7 @@ using UnityEngine;
 public class Activate : MonoBehaviour
 {
     public GameObject[] objects;
+    public GameObject activeSprite;
     public GameObject cooldownSprite;
     public float cooldownSec;
     public string effect;
@@ -32,9 +33,9 @@ public class Activate : MonoBehaviour
 
     IEnumerator offOnCooldown() {
         cooldownSprite.SetActive(true);
-        GetComponent<MeshRenderer>().enabled = false;
+        activeSprite.SetActive(false);
         yield return new WaitForSeconds(cooldownSec);
         cooldownSprite.SetActive(false);
-        GetComponent<MeshRenderer>().enabled = true;
+        activeSprite.SetActive(true);
     }
 }
