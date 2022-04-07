@@ -5,7 +5,11 @@ using UnityEngine;
 public class Activate : MonoBehaviour
 {
     public GameObject[] objects;
+    public GameObject activeSprite;
+    public GameObject cooldownSprite;
+    public float cooldownSec;
     public string effect;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +28,14 @@ public class Activate : MonoBehaviour
                 obj.SetActive(!obj.activeSelf);
             }
         }
+        StartCoroutine(offOnCooldown());
+    }
+
+    IEnumerator offOnCooldown() {
+        cooldownSprite.SetActive(true);
+        activeSprite.SetActive(false);
+        yield return new WaitForSeconds(cooldownSec);
+        cooldownSprite.SetActive(false);
+        activeSprite.SetActive(true);
     }
 }

@@ -47,7 +47,7 @@ namespace StarterAssets
         IEnumerator KillPlayer()
         {
             agent.speed = 1f;
-            agent.angularSpeed = 2000f;
+            //agent.angularSpeed = 8000f;
             WaitForSeconds wait = new WaitForSeconds(.4f);
             float i = 0;
             while (i < killTime - 4f)

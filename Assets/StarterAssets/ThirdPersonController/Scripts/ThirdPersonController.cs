@@ -85,7 +85,7 @@ namespace StarterAssets
 		private Animator _animator;
 		private CharacterController _controller;
 		public StarterAssetsInputs _input; // input script
-		private GameObject _mainCamera;
+		public GameObject _mainCamera;
 		public PlayerInput _rawInput;
 
 		private const float _threshold = 0.01f;
