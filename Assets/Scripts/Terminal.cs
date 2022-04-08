@@ -12,8 +12,10 @@ namespace StarterAssets
         public Inventory inventory;
         public GameObject pickupRange;
         public GameObject[] itemsWithinRange;
-        public GameObject halfHPIndicator;
+        public GameObject HPLossIndicator;
+        public GameObject HPLossIndicator1;
         public GameObject LossScreen;
+        public GameObject CrossHair;
         public bool fingerOffInteract = true;
 
         void Start()
@@ -32,11 +34,15 @@ namespace StarterAssets
             if (base.ApplyDamage(damage))
             {
                 LossScreen.SetActive(true);
+                CrossHair.SetActive(false);
                 StartCoroutine(RestartGame(5f));
                 return true;
-            } else if (hitPoints <= 5)
+            } else if (hitPoints <= 3)
             {
-                halfHPIndicator.SetActive(true);
+                HPLossIndicator.SetActive(true);
+            } else if (hitPoints <= 6)
+            {
+                HPLossIndicator1.SetActive(true);
             }
             return false;
         }
