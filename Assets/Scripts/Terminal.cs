@@ -17,7 +17,7 @@ namespace StarterAssets
         public GameObject LossScreen;
         public GameObject CrossHair;
         public bool fingerOffInteract = true;
-
+        public GameObject warningSign;
         void Start()
         {
 
@@ -47,6 +47,7 @@ namespace StarterAssets
             return false;
         }
 
+        
         public void UpdateTarget()
         {
             if (!hasAI)

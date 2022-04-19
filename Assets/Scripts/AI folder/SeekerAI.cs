@@ -24,6 +24,7 @@ namespace StarterAssets
 
             if (!alreadyStartedKP)
             {
+                
                 agent.SetDestination(transform.position);
                 killCoroutine = KillPlayer();
                 StartCoroutine(killCoroutine);
@@ -36,6 +37,7 @@ namespace StarterAssets
         {
             if (alreadyStartedKP)
             {
+                playerRef.GetComponent<Terminal>().warningSign.SetActive(false);
                 agent.speed = moveSpeed;
                 agent.angularSpeed = turnSpeed;
                 StopCoroutine(killCoroutine);
@@ -52,6 +54,7 @@ namespace StarterAssets
             float i = 0;
             while (i < killTime - 4f)
             {
+                playerRef.GetComponent<Terminal>().warningSign.SetActive(true);
                 yield return wait;
                 i += .4f;
                 agent.SetDestination(playerRef.transform.position);
@@ -59,6 +62,7 @@ namespace StarterAssets
 
             while (i < killTime)
             {
+                playerRef.GetComponent<Terminal>().warningSign.SetActive(true);
                 yield return wait;
                 i += .4f;
                 agent.SetDestination(playerRef.transform.position);
