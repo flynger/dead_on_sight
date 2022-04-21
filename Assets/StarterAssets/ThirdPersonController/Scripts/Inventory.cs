@@ -25,6 +25,7 @@ namespace StarterAssets
                     Quaternion camRotation = camera.transform.rotation;
                     inventory.transform.position = camPos;
                     inventory.transform.rotation = camRotation;*/
+            ItemCheck();
             if (item != null)
             {
                 item.transform.position = itemRoot.transform.position;
@@ -48,18 +49,18 @@ namespace StarterAssets
             item.GetComponent<Rigidbody>().useGravity = false;
         }
 
-        void OnTriggerStay(Collider other)
-        {
-            if (gameObject.GetComponentInParent<ThirdPersonController>() != null && gameObject.GetComponentInParent<ThirdPersonController>().enabled && other.gameObject.CompareTag("item"))
+        public void ItemCheck() {
+            Terminal parent = gameObject.GetComponentInParent<Terminal>();
+            if (parent != null && parent.target != null && parent.target.CompareTag("item"))
             {
-                if (!eBuffer && gameObject.GetComponentInParent<ThirdPersonController>()._input.action)
+                if (!eBuffer && parent.DistanceTo(parent.target) <= 4 && parent.controller._input.action)
                 {
                     Debug.Log("PICKING UP ITEM");
                     DropItem();
-                    PickupItem(other.gameObject);
+                    PickupItem(parent.target);
                     eBuffer = true;
                 }
-                else if (!gameObject.GetComponentInParent<ThirdPersonController>()._input.action) {
+                else if (!parent.controller._input.action) {
                     eBuffer = false;
                 }
             }
