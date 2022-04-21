@@ -1571,15 +1571,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7301073553755528351, guid: b77eb4b20170b7d4dac553c29f9d1e74, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 1.02e-43
+      value: 1.457e-41
       objectReference: {fileID: 0}
     - target: {fileID: 7301073553755528351, guid: b77eb4b20170b7d4dac553c29f9d1e74, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: -5.55739e+23
+      value: 6e-44
       objectReference: {fileID: 0}
     - target: {fileID: 7301073553755528351, guid: b77eb4b20170b7d4dac553c29f9d1e74, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 4.5904e-41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8648580796891087633, guid: b77eb4b20170b7d4dac553c29f9d1e74, type: 3}
       propertyPath: m_IsActive
@@ -5621,7 +5621,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9105,7 +9105,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -15834,6 +15834,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1119424439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6402053813268763635, guid: 12e1d7ef4e6425b4593db3133fe7b9ad, type: 3}
+  m_PrefabInstance: {fileID: 5377151646570502459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1130834800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16069,7 +16074,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24330
+  m_Name: pb_Mesh34954
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19172,6 +19177,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71f172eae6718fb4889e25403035629d, type: 3}
+--- !u!1 &1383407274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7554812368536528411, guid: 12e1d7ef4e6425b4593db3133fe7b9ad, type: 3}
+  m_PrefabInstance: {fileID: 5377151646570502459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1414677997
 GameObject:
   m_ObjectHideFlags: 0
@@ -20958,9 +20968,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1879007414, guid: bbb91e752ebcec24f89340ce7db67b7e, type: 3}
+      propertyPath: CrossHair
+      value: 
+      objectReference: {fileID: 1383407274}
+    - target: {fileID: 1879007414, guid: bbb91e752ebcec24f89340ce7db67b7e, type: 3}
       propertyPath: LossScreen
       value: 
       objectReference: {fileID: 526428761}
+    - target: {fileID: 1879007414, guid: bbb91e752ebcec24f89340ce7db67b7e, type: 3}
+      propertyPath: warningSign
+      value: 
+      objectReference: {fileID: 1119424439}
     - target: {fileID: 1879007414, guid: bbb91e752ebcec24f89340ce7db67b7e, type: 3}
       propertyPath: HPLossIndicator
       value: 
@@ -41490,6 +41508,10 @@ PrefabInstance:
     - target: {fileID: 5715603081736787773, guid: 12e1d7ef4e6425b4593db3133fe7b9ad, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554812368536528411, guid: 12e1d7ef4e6425b4593db3133fe7b9ad, type: 3}
+      propertyPath: m_Name
+      value: Crosshair
       objectReference: {fileID: 0}
     - target: {fileID: 7938681238181528051, guid: 12e1d7ef4e6425b4593db3133fe7b9ad, type: 3}
       propertyPath: m_RootOrder

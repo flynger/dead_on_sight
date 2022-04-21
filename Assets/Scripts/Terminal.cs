@@ -129,6 +129,7 @@ namespace StarterAssets
 
         void Hack(GameObject obj)
         {
+            Debug.Log(obj);
             gameManager.SelectNewPlayer(obj);
         }
 
