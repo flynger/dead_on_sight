@@ -22,7 +22,7 @@ namespace StarterAssets
             if (fOV.inSightRange)
             {
                 Handles.color = Color.green;
-                Handles.DrawLine(fOV.transform.position, fOV.playerRef.transform.position);
+                Handles.DrawLine(fOV.transform.position, fOV.gameManager.player.transform.position);
             }
         }
 

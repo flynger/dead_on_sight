@@ -9,7 +9,7 @@ namespace StarterAssets
     public class AIScript : MonoBehaviour
     {
         public NavMeshAgent agent;
-        public GameObject playerRef;
+        public GameManager gameManager;
         public LayerMask groundMask, playerMask;
 
         //patroll
@@ -30,7 +30,6 @@ namespace StarterAssets
 
         private void Start()
         {
-            playerRef = GameObject.FindGameObjectWithTag("player");
             agent = GetComponent<NavMeshAgent>();
             StartCoroutine(FOVRoutine());
         }

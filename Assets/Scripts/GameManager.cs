@@ -13,7 +13,12 @@ namespace StarterAssets
         public GameObject player;
         public CinemachineVirtualCamera virtualCam;
         public LayerMask entityLayer;
-
+        public GameObject HPLossIndicator;
+        public GameObject HPLossIndicator1;
+        public GameObject lossScreen;
+        public GameObject crossHair;
+        
+        public GameObject warningSign;
         // Start is called before the first frame update
         void Start()
         {
