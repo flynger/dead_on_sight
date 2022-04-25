@@ -1571,15 +1571,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7301073553755528351, guid: b77eb4b20170b7d4dac553c29f9d1e74, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 1.457e-41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7301073553755528351, guid: b77eb4b20170b7d4dac553c29f9d1e74, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 6e-44
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7301073553755528351, guid: b77eb4b20170b7d4dac553c29f9d1e74, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8648580796891087633, guid: b77eb4b20170b7d4dac553c29f9d1e74, type: 3}
       propertyPath: m_IsActive
@@ -3551,7 +3551,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24368
+  m_Name: pb_Mesh25022
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14998,7 +14998,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1e-45, y: 0.000000014055313, z: 0, w: 1e-44}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -15895,9 +15895,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1807458059}
     - target: {fileID: 9078111304330985454, guid: 580c42ff54676034d978d1fc10153813, type: 3}
+      propertyPath: crossHair
+      value: 
+      objectReference: {fileID: 1383407274}
+    - target: {fileID: 9078111304330985454, guid: 580c42ff54676034d978d1fc10153813, type: 3}
+      propertyPath: lossScreen
+      value: 
+      objectReference: {fileID: 526428761}
+    - target: {fileID: 9078111304330985454, guid: 580c42ff54676034d978d1fc10153813, type: 3}
       propertyPath: virtualCam
       value: 
       objectReference: {fileID: 1733692382}
+    - target: {fileID: 9078111304330985454, guid: 580c42ff54676034d978d1fc10153813, type: 3}
+      propertyPath: warningSign
+      value: 
+      objectReference: {fileID: 1119424439}
+    - target: {fileID: 9078111304330985454, guid: 580c42ff54676034d978d1fc10153813, type: 3}
+      propertyPath: HPLossIndicator
+      value: 
+      objectReference: {fileID: 745010010}
+    - target: {fileID: 9078111304330985454, guid: 580c42ff54676034d978d1fc10153813, type: 3}
+      propertyPath: HPLossIndicator1
+      value: 
+      objectReference: {fileID: 1902897385}
     - target: {fileID: 9078111304330985455, guid: 580c42ff54676034d978d1fc10153813, type: 3}
       propertyPath: m_Name
       value: Game Manager
@@ -16074,7 +16094,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34954
+  m_Name: pb_Mesh24984
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19096,6 +19116,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1680483219, guid: 71f172eae6718fb4889e25403035629d, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 529712915}
+    - target: {fileID: 1680483219, guid: 71f172eae6718fb4889e25403035629d, type: 3}
       propertyPath: walkPointArray.Array.data[0]
       value: 
       objectReference: {fileID: 1783478910}
@@ -19796,6 +19820,10 @@ PrefabInstance:
       propertyPath: playerRef
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1680483219, guid: 71f172eae6718fb4889e25403035629d, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 529712915}
     - target: {fileID: 1680483219, guid: 71f172eae6718fb4889e25403035629d, type: 3}
       propertyPath: walkPointArray.Array.data[0]
       value: 
@@ -29507,6 +29535,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1680483219, guid: 71f172eae6718fb4889e25403035629d, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 529712915}
+    - target: {fileID: 1680483219, guid: 71f172eae6718fb4889e25403035629d, type: 3}
       propertyPath: walkPointArray.Array.data[0]
       value: 
       objectReference: {fileID: 582952910}
@@ -30047,7 +30079,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24476
+  m_Name: pb_Mesh25130
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41497,6 +41529,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5237664980817428676, guid: 12e1d7ef4e6425b4593db3133fe7b9ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331822735831201155, guid: 12e1d7ef4e6425b4593db3133fe7b9ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5685383401996676655, guid: 12e1d7ef4e6425b4593db3133fe7b9ad, type: 3}
       propertyPath: m_fontSize
       value: 64.1
@@ -41515,7 +41555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7938681238181528051, guid: 12e1d7ef4e6425b4593db3133fe7b9ad, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e1d7ef4e6425b4593db3133fe7b9ad, type: 3}
