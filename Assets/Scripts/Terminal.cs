@@ -69,7 +69,7 @@ namespace StarterAssets
             if (target.CompareTag("enemy") && controller._input.possess && canUseHack)
             {
                 Hack(target);
-                StartCoroutine(HackCooldown());
+                //StartCoroutine(HackCooldown());
             }
         }
 
@@ -131,6 +131,7 @@ namespace StarterAssets
         {
             Debug.Log(obj);
             gameManager.SelectNewPlayer(obj);
+            isHackable = false;
         }
 
         void ToggleCollider(bool state)

@@ -13,6 +13,7 @@ namespace StarterAssets
         public GameObject player;
         public CinemachineVirtualCamera virtualCam;
         public LayerMask entityLayer;
+        public LayerMask playerLayer;
         public GameObject HPLossIndicator;
         public GameObject HPLossIndicator1;
         public GameObject lossScreen;
@@ -36,15 +37,19 @@ namespace StarterAssets
         {
             player.GetComponent<Entity>().ToggleInput(false);
             player.GetComponent<Entity>().ToggleAI(true);
+            player.gameObject.layer = LayerMask.NameToLayer("Entity");
             player = obj;
             Entity entity = player.GetComponent<Entity>();
-            if (entity is Terminal)
-            {
-                Debug.Log("possessed another Terminal!");
-            }
+            // if (entity is Terminal)
+            // {
+            //     Debug.Log("possessed another Terminal!");
+            // }
             player.GetComponent<Entity>().ToggleInput(true);
             player.GetComponent<Entity>().ToggleAI(false);
+            //player.GetComponent<Terminal>().canUseHack = true;
+            player.gameObject.layer = LayerMask.NameToLayer("Player");
             virtualCam.Follow = player.transform.Find("PlayerCameraRoot");
+            virtualCam.LookAt = player.transform.Find("PlayerCameraRoot");
         }
     }
 }

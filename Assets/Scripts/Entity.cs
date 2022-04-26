@@ -37,7 +37,7 @@ namespace StarterAssets
                 //     GetComponent<SeekerAI>().enabled = state;
                 // }
                 // else {
-                    GetComponent<AIScript>().enabled = state;
+                GetComponent<AIScript>().enabled = state;
                 //}
                 GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = state;
             }
