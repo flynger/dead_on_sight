@@ -109,9 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acebeff40bb44ff4b8da6ba495925fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 630318634}
-  camera: {fileID: 0}
-  player: {fileID: 7021724606734822913}
+  item: {fileID: 0}
+  itemRoot: {fileID: 0}
 --- !u!1 &2114223376
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,9 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acebeff40bb44ff4b8da6ba495925fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 2114223376}
-  camera: {fileID: 0}
-  player: {fileID: 7021724606734822913}
+  item: {fileID: 0}
+  itemRoot: {fileID: 0}
 --- !u!114 &71630780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,8 +239,13 @@ MonoBehaviour:
   hitPoints: 7
   baseDamage: 2
   isHackable: 1
+  hasAI: 1
   canUseHack: 1
   target: {fileID: 0}
+  inventory: {fileID: 0}
+  pickupRange: {fileID: 0}
+  itemsWithinRange: []
+  fingerOffInteract: 1
 --- !u!1001 &6646819975456367824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -250,6 +253,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 970813729788131550, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -340,7 +347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 6646819975456367824}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7021724606734822913}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
