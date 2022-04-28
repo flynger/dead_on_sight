@@ -51,7 +51,7 @@ namespace StarterAssets
             {
                 yield return wait;
                 agent.SetDestination(gameManager.player.transform.position);
-
+                gameManager.warningSign.SetActive(true);
                 //if within 1 tile, deal damage
                 Collider[] rangeCheck = Physics.OverlapSphere(transform.position, 1, playerMask);
                 if (rangeCheck.Length != 0)
