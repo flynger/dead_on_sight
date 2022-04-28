@@ -10,8 +10,8 @@ namespace StarterAssets
         public bool canUseHack = true;
         public GameObject target;
         public Inventory inventory;
-        public GameObject pickupRange;
-        public GameObject[] itemsWithinRange;
+        public float pickupRange;
+        //public GameObject[] itemsWithinRange;
         public bool fingerOffInteract = true;
         void Start()
         {

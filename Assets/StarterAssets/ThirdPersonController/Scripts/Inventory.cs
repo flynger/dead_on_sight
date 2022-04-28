@@ -53,7 +53,7 @@ namespace StarterAssets
             Terminal parent = gameObject.GetComponentInParent<Terminal>();
             if (parent != null && parent.target != null && parent.target.CompareTag("item"))
             {
-                if (!eBuffer && parent.DistanceTo(parent.target) <= 4 && parent.controller._input.action)
+                if (!eBuffer && parent.DistanceTo(parent.target) <= parent.pickupRange && parent.controller._input.action)
                 {
                     Debug.Log("PICKING UP ITEM");
                     DropItem();
