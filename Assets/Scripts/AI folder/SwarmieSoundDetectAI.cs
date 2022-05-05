@@ -47,11 +47,11 @@ namespace StarterAssets
 
                     float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                    if (!Physics.Raycast(transform.position + new Vector3(0, 1.6f, 0), directionToTarget, distanceToTarget, groundMask))
+                    if (!Physics.Raycast(transform.position + new Vector3(0, .2f, 0), directionToTarget, distanceToTarget, groundMask))
                     {
 
                         inSightRange = true;
-
+                        GoToSoundPoint(target.transform.position);
                     }
                     else { }
                 }
@@ -61,6 +61,11 @@ namespace StarterAssets
             {
                 
             }
+        }
+
+        public void GoToSoundPoint(Vector3 pos)
+        {
+            agent.SetDestination(pos);
         }
     }
 }
