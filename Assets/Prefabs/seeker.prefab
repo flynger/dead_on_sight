@@ -114,14 +114,8 @@ MonoBehaviour:
   canUseHack: 0
   target: {fileID: 0}
   inventory: {fileID: 0}
-  pickupRange: {fileID: 0}
-  itemsWithinRange: []
-  HPLossIndicator: {fileID: 0}
-  HPLossIndicator1: {fileID: 0}
-  LossScreen: {fileID: 0}
-  CrossHair: {fileID: 0}
+  pickupRange: 0
   fingerOffInteract: 1
-  warningSign: {fileID: 0}
 --- !u!195 &182862634
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -157,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 182862634}
-  playerRef: {fileID: 0}
+  gameManager: {fileID: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 128
@@ -528,6 +522,10 @@ PrefabInstance:
     - target: {fileID: 8338988566280778634, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338988566280778637, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 8345528668818648182, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Layer
