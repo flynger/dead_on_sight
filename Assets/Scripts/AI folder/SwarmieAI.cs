@@ -56,6 +56,7 @@ namespace StarterAssets
                 Collider[] rangeCheck = Physics.OverlapSphere(transform.position, 1, playerMask);
                 if (rangeCheck.Length != 0)
                 {
+                    Debug.Log("SW delt damage");
                     gameManager.player.GetComponent<Entity>().ApplyDamage(GetComponent<Entity>().baseDamage);
                 }
             }

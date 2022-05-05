@@ -45,9 +45,17 @@ namespace StarterAssets
             {
                 gameManager.HPLossIndicator.SetActive(true);
             }
-            else if (hitPoints <= 6)
+            else
+            {
+                gameManager.HPLossIndicator.SetActive(false);
+            }
+            if (hitPoints <= 6)
             {
                 gameManager.HPLossIndicator1.SetActive(true);
+            }
+            else
+            {
+                gameManager.HPLossIndicator1.SetActive(false);
             }
         }
 
@@ -132,6 +140,7 @@ namespace StarterAssets
             Debug.Log(obj);
             gameManager.SelectNewPlayer(obj);
             isHackable = false;
+            UpdateUI();
         }
 
         void ToggleCollider(bool state)

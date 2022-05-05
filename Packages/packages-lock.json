@@ -91,6 +91,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.progrids": {
+      "version": "https://github.com/needle-mirror/com.unity.progrids.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.settings-manager": "1.0.2"
+      },
+      "hash": "e8fee0cf2c8c48a134ee1155192ce5e31dd9da8c"
+    },
     "com.unity.settings-manager": {
       "version": "1.0.3",
       "depth": 1,
