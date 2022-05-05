@@ -3768,7 +3768,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -21181,6 +21181,10 @@ PrefabInstance:
       propertyPath: SprintSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6739808888035398593, guid: bbb91e752ebcec24f89340ce7db67b7e, type: 3}
+      propertyPath: footstepSound
+      value: 
+      objectReference: {fileID: 2616146712343041186, guid: 834d9b0f0a9286a4ba3defb2735e7487, type: 3}
     - target: {fileID: 6739808888035398602, guid: bbb91e752ebcec24f89340ce7db67b7e, type: 3}
       propertyPath: m_Name
       value: Player
