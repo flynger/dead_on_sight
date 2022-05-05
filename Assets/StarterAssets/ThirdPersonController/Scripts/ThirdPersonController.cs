@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using System.Collections;
 #endif
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -87,10 +88,13 @@ namespace StarterAssets
 		public StarterAssetsInputs _input; // input script
 		public GameObject _mainCamera;
 		public PlayerInput _rawInput;
+		public GameObject footstepSound;
 
 		private const float _threshold = 0.01f;
 
 		private bool _hasAnimator;
+
+		private bool nextSound = true;
 
 		private void Awake()
 		{
@@ -226,6 +230,9 @@ namespace StarterAssets
 				_targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
 				transform.rotation = Quaternion.Euler(0.0f, _mainCamera.transform.eulerAngles.y, 0.0f);
 			}
+			if (nextSound && targetSpeed > MoveSpeed) {
+				StartCoroutine(FootstepCoroutine());
+			}
 			 //transform.rotation.x = Camera.main.transform.rotation;
 
 
@@ -333,6 +340,17 @@ namespace StarterAssets
 		public void HaltAnimations()
 		{
 			_animator.SetFloat(_animIDMotionSpeed, 0);
+		}
+
+		public void createFootstepSound() {
+			Instantiate(footstepSound, transform.position, transform.rotation);
+		}
+
+		IEnumerator FootstepCoroutine() {
+			nextSound = false;
+			createFootstepSound();
+			yield return new WaitForSeconds(footstepSound.GetComponent<Sound>().duration);
+			nextSound = true;
 		}
 	}
 }

@@ -9,6 +9,7 @@ TagManager:
   - enemy
   - item
   - interactable
+  - sound
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Player
   - Ground
   - Entity
-  - 
+  - Sound
   - 
   - 
   - 
