@@ -12,6 +12,7 @@ namespace StarterAssets
         private IEnumerator killCoroutine;
         private float moveSpeed;
         private float turnSpeed;
+        public GameObject sightLight;
         
         void Awake()
         {
@@ -52,24 +53,20 @@ namespace StarterAssets
             //agent.angularSpeed = 8000f;
             WaitForSeconds wait = new WaitForSeconds(.4f);
             float i = 0;
-            while (i < killTime - 4f)
-            {
-                gameManager.warningSign.SetActive(true);
-                yield return wait;
-                i += .4f;
-                agent.SetDestination(gameManager.player.transform.position);
-            }
-
             while (i < killTime)
             {
+                
+                Quaternion lookRotation = Quaternion.LookRotation(new Vector3(0,gameManager.player.transform.position.y,0) - new Vector3(0,transform.position.y,0));
                 gameManager.warningSign.SetActive(true);
                 yield return wait;
-                i += .4f;
+                i += .2f;
+                sightLight.transform.rotation = Quaternion.Lerp(sightLight.transform.rotation, lookRotation , .5f);
                 agent.SetDestination(gameManager.player.transform.position);
-                gameManager.player.GetComponent<Entity>().ApplyDamage(GetComponent<Entity>().baseDamage);
+                if (i >= 4)
+                {
+                    gameManager.player.GetComponent<Entity>().ApplyDamage(GetComponent<Entity>().baseDamage);
+                }
             }
-
-
         }
     }
 
