@@ -11,6 +11,7 @@ namespace StarterAssets
         public bool trackingPlayer;
         private float moveSpeed;
         private float turnSpeed;
+        public Rigidbody rigidBody;
         void Awake()
         {
 
