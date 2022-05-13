@@ -13,6 +13,7 @@ namespace StarterAssets
         private float moveSpeed;
         private float turnSpeed;
         public GameObject sightLight;
+        public GameObject sightLightReturnPoint;
         
         void Awake()
         {
@@ -38,6 +39,8 @@ namespace StarterAssets
         {
             if (alreadyStartedKP)
             {
+                Quaternion lookRotation = Quaternion.LookRotation(sightLightReturnPoint.transform.position - sightLight.transform.position);
+                sightLight.transform.rotation = Quaternion.Lerp(sightLight.transform.rotation, lookRotation, .5f);
                 gameManager.warningSign.SetActive(false);
                 agent.speed = moveSpeed;
                 agent.angularSpeed = turnSpeed;
@@ -56,7 +59,8 @@ namespace StarterAssets
             while (i < killTime)
             {
                 
-                Quaternion lookRotation = Quaternion.LookRotation(new Vector3(0,gameManager.player.transform.position.y,0) - new Vector3(0,transform.position.y,0));
+                Quaternion lookRotation = Quaternion.LookRotation(gameManager.player.transform.position - sightLight.transform.position);
+                lookRotation.eulerAngles = new Vector3(lookRotation.eulerAngles.x, lookRotation.eulerAngles.y, transform.rotation.z);
                 gameManager.warningSign.SetActive(true);
                 yield return wait;
                 i += .2f;
