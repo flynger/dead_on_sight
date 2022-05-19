@@ -13,9 +13,11 @@ namespace StarterAssets
         public float pickupRange;
         //public GameObject[] itemsWithinRange;
         public bool fingerOffInteract = true;
+        public bool itemInRange, enemyInRange, interactInRange;
+
         void Start()
         {
-
+            //StartCoroutine(RelevancyDetection());
         }
 
         void Update()
@@ -38,6 +40,8 @@ namespace StarterAssets
             }
             
         }
+
+        
 
         public void UpdateUI()
         {
@@ -68,26 +72,66 @@ namespace StarterAssets
                 {
                     HackCheck();
                     InteractCheck();
+                    UpdateIndicators();
                 }
+            }
+        }
+
+        void UpdateIndicators()
+        {
+            if (DistanceTo(target) <= pickupRange)
+            {
+                
+                gameManager.grabIndicator.SetActive(true);
+            }
+            else
+            {
+                gameManager.grabIndicator.SetActive(false);
+            }
+
+            if (enemyInRange)
+            {
+                
+                gameManager.hackIndicator.SetActive(true);
+            }
+            else
+            {
+                gameManager.hackIndicator.SetActive(false);
+            }
+
+            if (interactInRange)
+            {
+                
+                gameManager.interIndicator.SetActive(true);
+            }
+            else
+            {
+                gameManager.interIndicator.SetActive(false);
             }
         }
 
         public void HackCheck()
         {
-            if (target.CompareTag("enemy") && controller._input.possess && canUseHack)
+            if (target.CompareTag("enemy") && canUseHack)
             {
-                Hack(target);
+                enemyInRange = true;
+                if (controller._input.possess)
+                {
+                    Hack(target);
+                }
                 //StartCoroutine(HackCooldown());
             }
+            else enemyInRange = false;
         }
 
         public void InteractCheck()
         {
-            if (Vector3.Distance(transform.position + new Vector3(0.06f, 1.6f, 0f), target.transform.position) <= 4)
+            if (target.CompareTag("interactable") && Vector3.Distance(transform.position + new Vector3(0.06f, 1.6f, 0f), target.transform.position) <= 4)
             {
+                interactInRange = true;
                 if (controller._input.action)
                 {
-                    if (target.CompareTag("interactable") && fingerOffInteract)
+                    if (fingerOffInteract)
                     {
                         target.GetComponent<Activate>().activateEffect();
                         //StartCoroutine(InteractCooldown());
@@ -99,6 +143,7 @@ namespace StarterAssets
                     fingerOffInteract = true;
                 }
             }
+            else interactInRange = false;
         }
 
         public bool CheckVision(float distance, out GameObject obj)

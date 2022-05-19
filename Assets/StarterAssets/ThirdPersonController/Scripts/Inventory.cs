@@ -53,15 +53,20 @@ namespace StarterAssets
             Terminal parent = gameObject.GetComponentInParent<Terminal>();
             if (parent != null && parent.target != null && parent.target.CompareTag("item"))
             {
-                if (!eBuffer && parent.DistanceTo(parent.target) <= parent.pickupRange && parent.controller._input.action)
+                if (!eBuffer && parent.DistanceTo(parent.target) <= parent.pickupRange)
                 {
-                    Debug.Log("PICKING UP ITEM");
-                    DropItem();
-                    PickupItem(parent.target);
-                    eBuffer = true;
+                    //parent.GetComponent<Terminal>().itemInRange = true;
+                    if (parent.controller._input.action)
+                    {
+                        Debug.Log("PICKING UP ITEM");
+                        DropItem();
+                        PickupItem(parent.target);
+                        eBuffer = true;
+                    }
                 }
                 else if (!parent.controller._input.action) {
                     eBuffer = false;
+                    //parent.GetComponent<Terminal>().itemInRange = false;
                 }
             }
         }
