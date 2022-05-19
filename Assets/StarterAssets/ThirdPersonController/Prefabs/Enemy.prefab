@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 476020484}
-  playerRef: {fileID: 0}
+  gameManager: {fileID: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 128
@@ -69,8 +69,15 @@ MonoBehaviour:
   hitPoints: 7
   baseDamage: 2
   isHackable: 1
+  hasAI: 1
   canUseHack: 0
   target: {fileID: 0}
+  inventory: {fileID: 0}
+  pickupRange: 0
+  fingerOffInteract: 1
+  itemInRange: 0
+  enemyInRange: 0
+  interactInRange: 0
 --- !u!1001 &2469508694271446831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -354,6 +361,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6982812146204527121, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
     - target: {fileID: 6986324543679806377, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Layer
       value: 8

@@ -41,6 +41,7 @@ namespace StarterAssets
                 GetComponent<AIScript>().enabled = state;
                 //}
                 GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = state;
+                GetComponent<Terminal>().enabled = !state;
             }
         }
 
