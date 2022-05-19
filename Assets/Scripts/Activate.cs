@@ -9,6 +9,8 @@ public class Activate : MonoBehaviour
     public GameObject cooldownSprite;
     public float cooldownSec;
     public string effect;
+    public bool isOneTimeUse;
+    public bool touchActivated;
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,9 @@ public class Activate : MonoBehaviour
             }
         }
         StartCoroutine(offOnCooldown());
+        if (isOneTimeUse) {
+            GetComponent<Activate>().enabled = false;
+        }
     }
 
     IEnumerator offOnCooldown() {
@@ -37,5 +42,11 @@ public class Activate : MonoBehaviour
         yield return new WaitForSeconds(cooldownSec);
         cooldownSprite.SetActive(false);
         activeSprite.SetActive(true);
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (!other.CompareTag("enemy") && touchActivated) {
+            activateEffect();
+        }
     }
 }
