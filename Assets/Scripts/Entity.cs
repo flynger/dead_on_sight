@@ -45,6 +45,11 @@ namespace StarterAssets
             }
         }
 
+        public bool isAIEnabled()
+        {
+            return hasAI && GetComponent<AIScript>().enabled;
+        }
+
         public bool CheckVision(float distance, out GameObject obj)
         {
             // account for starting point based on entity

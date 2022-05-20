@@ -66,7 +66,7 @@ namespace StarterAssets
         
         public void UpdateTarget()
         {
-            if (!hasAI)
+            if (!isAIEnabled())
             {
                 if (CheckVision(16, out target) && target != null)
                 {
