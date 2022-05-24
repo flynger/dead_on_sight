@@ -232,7 +232,7 @@ namespace StarterAssets
 							transform.rotation = Camera.main.transform.rotation;
 						}*/
 			if (SprintLimit < 0f) {
-				StartCoroutine(SprintDisable(3f));
+				StartCoroutine(SprintDisableCoroutine(3f));
 			}
 			if (targetSpeed > MoveSpeed) {
 				SprintLimit -= 1.5f * Time.deltaTime;
