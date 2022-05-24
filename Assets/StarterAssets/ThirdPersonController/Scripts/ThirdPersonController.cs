@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics;
+using System.Collections.Generic;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 using System.Collections;
@@ -22,6 +24,10 @@ namespace StarterAssets
 		public float SprintSpeed = 5.335f;
 		[Tooltip("How fast the character turns to face movement direction")]
 		[Range(0.0f, 0.3f)]
+
+		public float SprintLimit = 6f;
+		[Range(0.0f, 10f)]
+
 		public float RotationSmoothTime = 0.12f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
@@ -181,7 +187,7 @@ namespace StarterAssets
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			float targetSpeed = _input.sprint && SprintLimit > 0f ? SprintSpeed : MoveSpeed;
 
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -225,13 +231,21 @@ namespace StarterAssets
 							transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);*//*
 							transform.rotation = Camera.main.transform.rotation;
 						}*/
+			if (SprintLimit < 0f) {
+				StartCoroutine(SprintDisable(3f));
+			}
+			if (targetSpeed > MoveSpeed) {
+				SprintLimit -= 1.5f * Time.deltaTime;
+				if (nextSound) StartCoroutine(FootstepCoroutine());
+			} else if (SprintLimit > 0 && targetSpeed <= MoveSpeed) {
+				SprintLimit += Time.deltaTime;
+				if (SprintLimit > 7f) SprintLimit = 7f;
+			}
 			if (_rawInput.enabled)
 			{
 				_targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
 				transform.rotation = Quaternion.Euler(0.0f, _mainCamera.transform.eulerAngles.y, 0.0f);
-			}
-			if (nextSound && targetSpeed > MoveSpeed) {
-				StartCoroutine(FootstepCoroutine());
+				GetComponent<Entity>().gameManager.runSlider.value = SprintLimit/7f;
 			}
 			 //transform.rotation.x = Camera.main.transform.rotation;
 
@@ -351,6 +365,12 @@ namespace StarterAssets
 			createFootstepSound();
 			yield return new WaitForSeconds(footstepSound.GetComponent<Sound>().duration);
 			nextSound = true;
+		}
+
+		IEnumerator SprintDisableCoroutine(float time) {
+			SprintLimit = 0f;
+			yield return new WaitForSeconds(time);
+			SprintLimit = 0.1f;
 		}
 	}
 }

@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -15,6 +16,7 @@ namespace StarterAssets
         public LayerMask entityLayer;
         public LayerMask playerLayer;
         public GameObject HPLossIndicator, HPLossIndicator1, lossScreen, crossHair, grabIndicator, hackIndicator, interIndicator, warningSign;
+        public Slider runSlider;
 
         // Start is called before the first frame update
         void Start()
