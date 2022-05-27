@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 6934141100516240948}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 9078111304330985454, guid: 580c42ff54676034d978d1fc10153813, type: 3}
   groundMask:
     serializedVersion: 2
     m_Bits: 128
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d09f8a321babc94586d73ace417129f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 9078111304330985454, guid: 580c42ff54676034d978d1fc10153813, type: 3}
   controller: {fileID: 2722800096737526220}
   hitPoints: 7
   baseDamage: 2
@@ -75,6 +75,9 @@ MonoBehaviour:
   inventory: {fileID: 0}
   pickupRange: 0
   fingerOffInteract: 1
+  itemInRange: 0
+  enemyInRange: 0
+  interactInRange: 0
 --- !u!1 &4467189965659177936
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +107,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3351387237077015421}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5959083881003600051
 MonoBehaviour:
@@ -149,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3351387237077015421}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &7500153848415844824
 Light:
@@ -402,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: LockCameraPosition
@@ -610,7 +613,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1766896071292799766}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2722800096737526215}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 

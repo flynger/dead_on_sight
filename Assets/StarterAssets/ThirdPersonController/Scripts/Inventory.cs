@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,7 @@ namespace StarterAssets
         public GameObject item;
         public GameObject itemRoot;
         private bool eBuffer;
-        // public GameObject camera;
-        // public GameObject player;
-        // Start is called before the first frame update
+
         void Start()
         {
 
@@ -21,10 +20,6 @@ namespace StarterAssets
         // Update is called once per frame
         void Update()
         {
-            /*        Vector3 camPos = new Vector3(player.transform.position.x, player.transform.position.y + 0.8f, player.transform.position.z - 2);
-                    Quaternion camRotation = camera.transform.rotation;
-                    inventory.transform.position = camPos;
-                    inventory.transform.rotation = camRotation;*/
             ItemCheck();
             if (item != null)
             {
@@ -37,6 +32,7 @@ namespace StarterAssets
         {
             if (item != null)
             {
+                Debug.Log("Dropping current ITEM");
                 item.GetComponent<Collider>().enabled = true;
                 item.GetComponent<Rigidbody>().useGravity = true;
                 item = null;
@@ -45,20 +41,20 @@ namespace StarterAssets
 
         public void PickupItem(GameObject obj)
         {
+            Debug.Log("Picking up new ITEM");
             item = obj;
             item.GetComponent<Collider>().enabled = false;
             item.GetComponent<Rigidbody>().useGravity = false;
         }
 
         public void ItemCheck() {
-            Terminal parent = gameObject.GetComponentInParent<Terminal>();
+            Terminal parent = gameObject.GetComponent<Terminal>();
             // if parent Terminal is active
-            if (parent != null)
+            if (parent != null && GetComponent<ThirdPersonController>().enabled)
             {
                 // drop item
                 if (parent.controller._input.drop)
                 {
-                    Debug.Log("Dropping ITEM");
                     DropItem();
                 }
                 // check if valid item in view
@@ -66,9 +62,8 @@ namespace StarterAssets
                     // check for buffer and item pickup range
                     if (!eBuffer && parent.DistanceTo(parent.target) <= parent.pickupRange)
                     {
-                        if (parent.controller._input.action)
+                        if (parent.controller && parent.controller._input.action)
                         {
-                            Debug.Log("PICKING UP ITEM");
                             DropItem();
                             PickupItem(parent.target);
                             eBuffer = true;
