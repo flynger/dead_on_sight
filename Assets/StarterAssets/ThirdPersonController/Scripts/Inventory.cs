@@ -39,6 +39,7 @@ namespace StarterAssets
             {
                 item.GetComponent<Collider>().enabled = true;
                 item.GetComponent<Rigidbody>().useGravity = true;
+                item = null;
             }
         }
 
@@ -51,32 +52,32 @@ namespace StarterAssets
 
         public void ItemCheck() {
             Terminal parent = gameObject.GetComponentInParent<Terminal>();
-            if (parent != null && parent.target != null && parent.target.CompareTag("item"))
+            // if parent Terminal is active
+            if (parent != null)
             {
                 // drop item
                 if (parent.controller._input.drop)
                 {
-                    Debug.Log("PICKING UP ITEM");
+                    Debug.Log("Dropping ITEM");
                     DropItem();
-                    PickupItem(parent.target);
-                    eBuffer = true;
                 }
-
-
-                if (!eBuffer && parent.DistanceTo(parent.target) <= parent.pickupRange)
-                {
-                    //parent.GetComponent<Terminal>().itemInRange = true;
-                    if (parent.controller._input.action)
+                // check if valid item in view
+                if (parent.target != null && parent.target.CompareTag("item")) {
+                    // check for buffer and item pickup range
+                    if (!eBuffer && parent.DistanceTo(parent.target) <= parent.pickupRange)
                     {
-                        Debug.Log("PICKING UP ITEM");
-                        DropItem();
-                        PickupItem(parent.target);
-                        eBuffer = true;
+                        if (parent.controller._input.action)
+                        {
+                            Debug.Log("PICKING UP ITEM");
+                            DropItem();
+                            PickupItem(parent.target);
+                            eBuffer = true;
+                        }
                     }
-                }
-                else if (!parent.controller._input.action) {
-                    eBuffer = false;
-                    //parent.GetComponent<Terminal>().itemInRange = false;
+                    // reset buffer (buffer prevents holding down and swapping between two items infinitely)
+                    else if (!parent.controller._input.action) {
+                        eBuffer = false;
+                    }
                 }
             }
         }
