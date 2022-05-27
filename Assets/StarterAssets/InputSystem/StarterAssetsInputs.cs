@@ -14,6 +14,7 @@ namespace StarterAssets
         public bool sprint;
         public bool possess;
         public bool action;
+        public bool drop;
 
         [Header("Movement Settings")]
         public bool analogMovement;
@@ -57,6 +58,11 @@ namespace StarterAssets
         {
             ActionInput(value.isPressed);
         }
+
+        public void OnDrop(InputValue value)
+        {
+            DropInput(value.isPressed);
+        }
 #else
 	// old input sys if we do decide to have it (most likely wont)...
 #endif
@@ -90,6 +96,11 @@ namespace StarterAssets
         public void ActionInput(bool newActionState)
         {
             action = newActionState;
+        }
+
+        public void DropInput(bool newDropState)
+        {
+            drop = newDropState;
         }
 
 #if !UNITY_IOS || !UNITY_ANDROID
