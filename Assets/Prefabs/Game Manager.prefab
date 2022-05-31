@@ -48,3 +48,15 @@ MonoBehaviour:
   entityLayer:
     serializedVersion: 2
     m_Bits: 256
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  HPLossIndicator: {fileID: 0}
+  HPLossIndicator1: {fileID: 0}
+  lossScreen: {fileID: 0}
+  crossHair: {fileID: 0}
+  grabIndicator: {fileID: 0}
+  hackIndicator: {fileID: 0}
+  interIndicator: {fileID: 0}
+  warningSign: {fileID: 0}
+  runSlider: {fileID: 0}
