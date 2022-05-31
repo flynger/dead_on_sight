@@ -47,7 +47,7 @@ namespace StarterAssets
 
                     float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                    if (!Physics.Raycast(transform.position + new Vector3(0, .2f, 0), directionToTarget, distanceToTarget, groundMask))
+                    if (!Physics.Raycast(transform.position + new Vector3(0, .5f, 0), directionToTarget, distanceToTarget, groundMask))
                     {
 
                         inSightRange = true;
