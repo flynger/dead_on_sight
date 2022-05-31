@@ -113,10 +113,10 @@ namespace StarterAssets
 
         public void HackCheck()
         {
-            if (target.CompareTag("enemy") && canUseHack)
+            if (target.CompareTag("enemy") && canUseHack && target.GetComponent<Entity>().isHackable)
             {
                 enemyInRange = true;
-                if (controller._input.possess && target.GetComponent<Entity>().isHackable)
+                if (controller._input.possess)
                 {
                     Hack(target);
                 }
