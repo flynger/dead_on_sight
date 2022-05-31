@@ -1,3 +1,4 @@
+using System.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -115,7 +116,7 @@ namespace StarterAssets
             if (target.CompareTag("enemy") && canUseHack)
             {
                 enemyInRange = true;
-                if (controller._input.possess)
+                if (controller._input.possess && target.GetComponent<Entity>().isHackable)
                 {
                     Hack(target);
                 }
