@@ -1360,7 +1360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8914236732471003696, guid: 5c7cf0955217e2f4796d705c19665ba0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 8914236732471003696, guid: 5c7cf0955217e2f4796d705c19665ba0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1368,7 +1368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8914236732471003697, guid: 5c7cf0955217e2f4796d705c19665ba0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18
+      value: -16.5
       objectReference: {fileID: 0}
     - target: {fileID: 8914236732471003697, guid: 5c7cf0955217e2f4796d705c19665ba0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3511,7 +3511,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28400
+  m_Name: pb_Mesh28414
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4878,6 +4878,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1307201790}
     m_Modifications:
+    - target: {fileID: 171977264, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 171977264, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 171977264, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 171977264, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: m_Intensity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 171977264, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 500941288, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
       propertyPath: gameManager
       value: 
@@ -4905,6 +4925,18 @@ PrefabInstance:
     - target: {fileID: 3964653610273962755, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
       propertyPath: m_Name
       value: dummy seeker (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964653610273962760, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: MoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964653610273962760, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: SprintLimit
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964653610273962760, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: SprintSpeed
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4345577676294660537, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
       propertyPath: m_RootOrder
@@ -21294,6 +21326,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1307201790}
     m_Modifications:
+    - target: {fileID: 171977264, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 171977264, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 171977264, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 171977264, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: m_Intensity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 171977264, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 500941288, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
       propertyPath: gameManager
       value: 
@@ -21321,6 +21373,18 @@ PrefabInstance:
     - target: {fileID: 3964653610273962755, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
       propertyPath: m_Name
       value: dummy seeker
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964653610273962760, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: MoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964653610273962760, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: SprintLimit
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964653610273962760, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
+      propertyPath: SprintSpeed
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4345577676294660537, guid: 134a0073850b56448989bb271ad06fbd, type: 3}
       propertyPath: m_RootOrder
