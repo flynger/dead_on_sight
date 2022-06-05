@@ -36,6 +36,7 @@ namespace StarterAssets
             player.GetComponent<Entity>().ToggleInput(false);
             player.GetComponent<Entity>().ToggleAI(true);
             player.gameObject.layer = LayerMask.NameToLayer("Entity");
+            player.gameObject.tag = "enemy";
             player = obj;
             Entity entity = player.GetComponent<Entity>();
             // if (entity is Terminal)
@@ -46,6 +47,7 @@ namespace StarterAssets
             player.GetComponent<Entity>().ToggleAI(false);
             //player.GetComponent<Terminal>().canUseHack = true;
             player.gameObject.layer = LayerMask.NameToLayer("Player");
+            player.gameObject.tag = "player";
             virtualCam.Follow = player.transform.Find("PlayerCameraRoot");
             virtualCam.LookAt = player.transform.Find("PlayerCameraRoot");
         }

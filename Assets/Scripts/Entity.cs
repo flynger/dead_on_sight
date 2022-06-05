@@ -12,6 +12,7 @@ namespace StarterAssets
         public int baseDamage = 2;
         public bool isHackable = true;
         public bool hasAI = true;
+        public bool canInteract = true;
 
         public virtual bool ApplyDamage(int damage)
         {

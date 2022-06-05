@@ -261,12 +261,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d09f8a321babc94586d73ace417129f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 9078111304330985454, guid: 580c42ff54676034d978d1fc10153813, type: 3}
+  gameManager: {fileID: 0}
   controller: {fileID: 4271108264412272879}
   hitPoints: 7
   baseDamage: 1
   isHackable: 1
   hasAI: 1
+  canInteract: 1
   canUseHack: 1
   target: {fileID: 0}
   inventory: {fileID: 1428544804}
@@ -324,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 182862634}
-  gameManager: {fileID: 9078111304330985454, guid: 580c42ff54676034d978d1fc10153813, type: 3}
+  gameManager: {fileID: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 128
@@ -343,7 +344,7 @@ MonoBehaviour:
   sightRange: 75
   sightAngle: 120
   inSightRange: 0
-  killTime: 6
+  killTime: 4
   alreadyStartedKP: 0
   sightLight: {fileID: 1941030985}
   sightLightReturnPoint: {fileID: 1359578714}

@@ -127,7 +127,7 @@ namespace StarterAssets
 
         public void InteractCheck()
         {
-            if (target.CompareTag("interactable") && Vector3.Distance(transform.position + new Vector3(0.06f, 1.6f, 0f), target.transform.position) <= 4)
+            if (canInteract && target.CompareTag("interactable") && Vector3.Distance(transform.position + new Vector3(0.06f, 1.6f, 0f), target.transform.position) <= 4)
             {
                 interactInRange = true;
                 if (controller._input.action)
