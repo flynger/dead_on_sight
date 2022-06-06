@@ -7,15 +7,16 @@ namespace StarterAssets
 {
     public class StartScreenScript : MonoBehaviour
     {
-        
 
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetButtonDown("1"))
-            {
-                GoToScene(1);
-            }
+            
         }
 
         public void GoToScene(int sceneIndex)
